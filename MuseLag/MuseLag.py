@@ -1,4 +1,3 @@
-from pylsl import StreamInfo, StreamInlet, StreamOutlet, LostError, resolve_byprop
 import muselsl
 import datetime
 import time
@@ -19,18 +18,18 @@ Popen('muselsl stream --address {0} --backend {1}'.format(address, backend), cre
 print('Stream will begin, wait for viewer to show data...')
 Popen('muselsl view', creationflags=CREATE_NEW_CONSOLE)
 
-start = input("-- When data is stable on all channels press enter to begin test (takes 30 seconds). --")
+start = input("-- When data is stable on all channels press enter to begin test (takes 2 minutes). --")
 
-fileTime = datetime.datetime.now().strftime('%Y-%m-%d-%H.%M.%S')
+fileTime = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
 
-Popen('muselsl record --filename data/recording_{0}'.format(fileTime), stdin=PIPE, creationflags=CREATE_NEW_CONSOLE)
+Popen('muselsl record --duration {0} --filename data/recording_{1}.csv'.format(120, fileTime), stdin=PIPE, creationflags=CREATE_NEW_CONSOLE)
+
 time.sleep(5)
-for i in range(5):
+for i in range(20):
     events.append([time.time(), 'high voltage'])
     winsound.Beep(1000, 2500)
     events.append([time.time(), 'low voltage'])
     time.sleep(2.50)
-
 
 with open('data/events_' + fileTime + '.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',

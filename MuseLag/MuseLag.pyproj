@@ -28,6 +28,8 @@
     <Content Include=".ipynb_checkpoints\MuseLag Data Analysis-checkpoint.ipynb" />
     <Content Include="100Hz_44100Hz_16bit_30sec.wav" />
     <Content Include="data\events_2018-07-03-02.05.42.csv" />
+    <Content Include="data\events_2018-07-04-19-24-04.csv" />
+    <Content Include="data\recording_2018-07-04-19-24-04.csv" />
     <Content Include="MuseLag Data Analysis.ipynb" />
     <Content Include="data\recording_2018-07-03-02.05.42.csv" />
   </ItemGroup>
