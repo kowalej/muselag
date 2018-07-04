@@ -24,9 +24,9 @@ start = input("-- When data is stable on all channels press enter to begin test 
 Popen('muselsl record', stdin=PIPE, creationflags=CREATE_NEW_CONSOLE)
 time.sleep(5)
 for i in range(5):
-    events.append([time.time(), 'low'])
+    events.append([time.time(), 'high voltage'])
     winsound.Beep(1000, 2500)
-    events.append([time.time(), 'high'])
+    events.append([time.time(), 'low voltage'])
     time.sleep(2.50)
 
 
