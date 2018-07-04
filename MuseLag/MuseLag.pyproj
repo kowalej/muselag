@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>MuseLag</Name>
     <RootNamespace>MuseLag</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,7 +25,25 @@
     <Compile Include="MuseLag.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".ipynb_checkpoints\MuseLag Data Analysis-checkpoint.ipynb" />
     <Content Include="100Hz_44100Hz_16bit_30sec.wav" />
+    <Content Include="events_2018-07-03-02.05.42.csv" />
+    <Content Include="MuseLag Data Analysis.ipynb" />
+    <Content Include="recording_2018-07-03-06.05.14.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Anaconda 5.1.0)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".ipynb_checkpoints\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
