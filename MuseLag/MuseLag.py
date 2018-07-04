@@ -21,7 +21,9 @@ Popen('muselsl view', creationflags=CREATE_NEW_CONSOLE)
 
 start = input("-- When data is stable on all channels press enter to begin test (takes 30 seconds). --")
 
-Popen('muselsl record', stdin=PIPE, creationflags=CREATE_NEW_CONSOLE)
+fileTime = datetime.datetime.now().strftime('%Y-%m-%d-%H.%M.%S')
+
+Popen('muselsl record --filename data/recording_{0}'.format(fileTime), stdin=PIPE, creationflags=CREATE_NEW_CONSOLE)
 time.sleep(5)
 for i in range(5):
     events.append([time.time(), 'high voltage'])
@@ -30,11 +32,10 @@ for i in range(5):
     time.sleep(2.50)
 
 
-fileTime = datetime.datetime.now().strftime('%Y-%m-%d-%H.%M.%S')
-with open('events_' + fileTime + '.csv', 'w', newline='') as csvfile:
+with open('data/events_' + fileTime + '.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                                 quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow(['timestamp', 'event'])
+        writer.writerow(['timestamps', 'events'])
         for data in events:
             writer.writerow(data)
 print('Done.')

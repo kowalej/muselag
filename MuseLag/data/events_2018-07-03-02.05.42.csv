@@ -1,4 +1,4 @@
-timestamp,event
+timestamps,events
 1530597884.7773092,start
 1530597917.1314025,high voltage
 1530597919.631785,low voltage

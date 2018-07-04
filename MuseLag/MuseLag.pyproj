@@ -27,9 +27,9 @@
   <ItemGroup>
     <Content Include=".ipynb_checkpoints\MuseLag Data Analysis-checkpoint.ipynb" />
     <Content Include="100Hz_44100Hz_16bit_30sec.wav" />
-    <Content Include="events_2018-07-03-02.05.42.csv" />
+    <Content Include="data\events_2018-07-03-02.05.42.csv" />
     <Content Include="MuseLag Data Analysis.ipynb" />
-    <Content Include="recording_2018-07-03-06.05.14.csv" />
+    <Content Include="data\recording_2018-07-03-02.05.42.csv" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".ipynb_checkpoints\" />
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
